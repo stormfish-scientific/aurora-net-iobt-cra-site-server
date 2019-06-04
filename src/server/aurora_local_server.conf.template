@@ -1,0 +1,71 @@
+# AURORA-Net IoBT CRA Site Server
+# Copyright (C) 2019  Stormfish Scientific Corporation
+#
+# AURORA-Net IoBT CRA Site Server is free software: you can
+# redistribute it and/or modify it under the terms of the GNU General
+# Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your option) any later version.
+#
+# AURORA-Net IoBT CRA Site Server is distributed in the hope that it
+# will be useful, but WITHOUT ANY WARRANTY; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see
+# <http://www.gnu.org/licenses/>.
+
+# By: Stormfish Scientific Corporation
+
+[local_site_server]
+site_id = 
+site_name = 
+site_poc_email =
+
+[local_server_xsub]
+socket_in_type = XSUB
+socket_in_mode = BIND
+socket_in_url = tcp://0.0.0.0:9101
+socket_out_type = XPUB
+socket_out_mode = BIND
+socket_out_url = tcp://0.0.0.0:9103
+mirror_socket_type = XPUB
+mirror_socket_mode = BIND
+mirror_socket_url = tcp://0.0.0.0:9105
+
+[local_server_xpub]
+socket_in_type = XSUB
+socket_in_mode = CONNECT
+socket_in_url = tcp://aurora-net-local-server-xsub:9103
+socket_a1_type = XSUB
+socket_a1_mode = CONNECT
+socket_a1_url = tcp://aurora-net-cra-downlink:9106
+socket_out_type = XPUB
+socket_out_mode = BIND
+socket_out_url = tcp://0.0.0.0:9102
+mirror_socket_type = XPUB
+mirror_socket_mode = BIND
+mirror_socket_url = tcp://0.0.0.0:9104
+
+[cra_uplink]
+socket_in_type = XSUB
+socket_in_mode = CONNECT
+socket_in_url = tcp://aurora-net-local-server-xsub:9103
+socket_out_type = XPUB
+socket_out_mode = CONNECT
+socket_out_url = tcp://tbd:9101
+mirror_socket_type = XPUB
+mirror_socket_mode = BIND
+mirror_socket_url = tcp://0.0.0.0:9107
+
+[cra_downlink]
+socket_in_type = XSUB
+socket_in_mode = CONNECT
+socket_in_url = tcp://tbd:9102
+socket_out_type = XPUB
+socket_out_mode = BIND
+socket_out_url = tcp://0.0.0.0:9106
+mirror_socket_type = XPUB
+mirror_socket_mode = BIND
+mirror_socket_url = tcp://0.0.0.0:9108
+

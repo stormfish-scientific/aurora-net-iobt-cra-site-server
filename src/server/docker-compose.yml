@@ -1,0 +1,111 @@
+# AURORA-Net IoBT CRA Site Server
+# Copyright (C) 2019  Stormfish Scientific Corporation
+#
+# AURORA-Net IoBT CRA Site Server is free software: you can
+# redistribute it and/or modify it under the terms of the GNU General
+# Public License as published by the Free Software Foundation, either
+# version 3 of the License, or (at your option) any later version.
+#
+# AURORA-Net IoBT CRA Site Server is distributed in the hope that it
+# will be useful, but WITHOUT ANY WARRANTY; without even the implied
+# warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see
+# <http://www.gnu.org/licenses/>.
+
+# By: Stormfish Scientific Corporation
+
+version: "3.1"
+
+services:
+
+  aurora-net-local-server-xsub:
+    image: aurora-net
+
+    volumes:
+      - ./:/usr/src/app/
+
+    expose:
+      - "9101"
+      - "9103"
+      - "9105"
+
+    environment:
+      - XSUB_URL=tcp://0.0.0.0:9101
+      - XPUB_URL=tcp://0.0.0.0:9103
+      - MIRROR_URL=tcp://0.0.0.0:9105
+
+    ports:
+      - "9101:9101" # XSUB BIND
+      - "9103:9103" # XPUB BIND
+      - "9105:9105" # PXUB BIND (Mirror port)
+
+    command: ['python', '-u', 'aurora_local_server_xsub.py']
+
+  aurora-net-local-server-xpub:
+    image: aurora-net
+
+    volumes:
+      - ./:/usr/src/app/
+
+    expose:
+      - "9102"
+      - "9104"
+
+    environment:
+      - XPUB_URL=tcp://0.0.0.0:9102
+      - MIRROR_URL=tcp://0.0.0.0:9104
+
+    links:
+      - aurora-net-local-server-xsub
+      - aurora-net-cra-downlink
+
+    depends_on:
+      - aurora-net-local-server-xsub
+      - aurora-net-cra-downlink
+
+    ports:
+      - "9102:9102" # XPUB BIND
+      - "9104:9104" # XPUB BIND (Mirror port)
+
+    command: ['python', '-u', 'aurora_local_server_xpub.py']
+
+  aurora-net-cra-uplink:
+    image: aurora-net
+
+    volumes:
+      - ./:/usr/src/app/
+
+    expose:
+      - "9107"
+
+    links:
+      - aurora-net-local-server-xsub
+
+    depends_on:
+      - aurora-net-local-server-xsub
+
+    ports:
+      - "9107:9107" # XPUB BIND (Mirror port)
+
+    command: ['python', '-u', 'aurora_cra_uplink.py']
+    
+  aurora-net-cra-downlink:
+    image: aurora-net
+
+    volumes:
+      - ./:/usr/src/app/
+
+    expose:
+      - "9106"
+      - "9108"
+
+    ports:
+      - "9106:9106" # XPUB BIND
+      - "9108:9108" # XPUB BIND (Mirror port) 
+
+    command: ['python', '-u', 'aurora_cra_downlink.py']
+    
+  

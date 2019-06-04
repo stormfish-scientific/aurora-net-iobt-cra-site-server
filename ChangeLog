@@ -1,0 +1,23 @@
+2019-05-08  Theron T. Trout  <theron.trout@stormfish.io>
+
+	* docker/build.sh: Added script to build aurora-net docker image.
+
+	* docker/aurora-net-image/Dockerfile: Added Dockerfile to build aurora-net image.
+
+	* -: Improved comments and documentation.
+
+2019-04-16  Theron T. Trout  <theron.trout@stormfish.io>
+
+	* -: Implemented CurveZMQ crypto to CRA uplink connections.
+	Added warning text to help prevent users from overwriting and losing their
+	Added scripts for generating local server site certificates.
+
+2019-04-12  Theron T. Trout  <theron.trout@stormfish.io>
+
+	* -: Improved aurora_net_cra_client.py test code.
+	Implemented a simple, asynchronous client libray. Added pub and sub test code.
+	Renamed socket_a to socket_in and socket_b to socket_out.
+
+2019-04-10  Theron T. Trout  <theron.trout@stormfish.io>
+
+	* -: Project Initiated
