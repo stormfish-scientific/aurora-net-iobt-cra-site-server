@@ -80,7 +80,7 @@ class UplinkProxy(basic_proxy.BasicProxy):
 
         if (
                 'site_id' not in self.config['local_site_server'] or (
-                    'site_id' in self.config['local_site_server'] and 
+                    'site_id' in self.config['local_site_server'] and
                     self.config['local_site_server']['site_id'] == ''
                 )
         ):
