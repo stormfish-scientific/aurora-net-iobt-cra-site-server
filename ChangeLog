@@ -1,3 +1,12 @@
+2019-06-05  Theron T. Trout  <theron.trout@stormfish.io>
+
+	* src/server/start-uplink.sh, src/server/stop-uplink.sh: Added scripts to
+	start and stop uplink.
+
+	* src/server/basic_proxy.py: Changed temporary server key filename to
+	aurora-server.key.  The key file in ./src/server/public_keys/aurora-server.key
+	will be used to validate the server trust relationship.
+
 2019-05-08  Theron T. Trout  <theron.trout@stormfish.io>
 
 	* docker/build.sh: Added script to build aurora-net docker image.

@@ -68,7 +68,7 @@ class BasicProxy(object):
         self.secret_keys_dir = os.path.join(self.base_dir, 'private_keys')
 
         self.server_public_file = os.path.join(
-            self.public_keys_dir, "[PUT SERVER PUBLIC KEY NAME HERE]"
+            self.public_keys_dir, "aurora-server.key"
         )
 
         self.server_key = zmq.auth.load_certificate(

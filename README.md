@@ -71,6 +71,10 @@ $ cd ./src/server/
 
 Edit aurora_local_server.conf as desired.
 
+Provide an appropriate value for site_name and site_poc_email.  A value
+for site_id will be a uuid.  If you don't supply one, one will be
+generated and the config file updated on the first run.
+
 local_server_xsub configures the server port to which local nodes may
 connect and publish messages.  The default port is 9101/tcp.
 
@@ -83,11 +87,33 @@ to provide inter-site communication.  If you are a IoBT CRA member
 and wish to connect to partner CRA sites, please contact your CRA
 coordinator.
 
+#### 2.a) Generate Certificates
+
+You will need the public key of the server and to have your public key
+installed on the server before you will be able to connect.  To
+generate your public/private key pair, do the following:
+
+$ cd ./src/server
+$ ./run-generate_certificates.sh
+
+Make a copy of the file client.key in the ./src/server/public_keys
+folder and name it something representative of your site.  Send a
+copy of this file to the central CRA server administrator.
+
+You will need a copy of the CRA server's public key in order to
+establish a trust relationship with the central server.  Contact
+the CRA server adminstrator to request this file.
+
+
 ### 3) Launch Server
 
 cd ./src/server
 
 $ docker-compose up -d
+
+To check output for errors enter:
+
+$ docker-compose logs -f
 
 ### 4) Testing
 
