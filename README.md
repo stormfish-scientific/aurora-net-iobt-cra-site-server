@@ -69,7 +69,8 @@ $ ./build.sh
 
 $ cd ./src/server/
 
-Edit aurora_local_server.conf as desired.
+Edit aurora_local_server.conf as desired.  Make sure to change the
+uplink and downlink server address from "tbd" to whatever is appropriate.
 
 Provide an appropriate value for site_name and site_poc_email.  A value
 for site_id will be a uuid.  If you don't supply one, one will be
@@ -103,7 +104,6 @@ copy of this file to the central CRA server administrator.
 You will need a copy of the CRA server's public key in order to
 establish a trust relationship with the central server.  Contact
 the CRA server adminstrator to request this file.
-
 
 ### 3) Launch Server
 
