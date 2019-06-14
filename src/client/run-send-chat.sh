@@ -28,7 +28,7 @@ if [ "$1" = "cli" ]; then
 
     if [ $# -eq 0 ]; then
 
-	docker run -ti --rm --name aurora-part5.1-pub \
+	docker run -ti --rm --name aurora-partsend-pub \
 	       -v ${PWD}:/usr/src/app \
 	       --network host \
 	       -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
@@ -46,7 +46,7 @@ if [ "$1" = "cli" ]; then
     
 else 
 
-    docker run -ti --rm --name aurora-part5.1-pub \
+    docker run -ti --rm --name aurora-partsend-pub \
 	   -v ${PWD}:/usr/src/app \
 	   --network host \
 	   -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \

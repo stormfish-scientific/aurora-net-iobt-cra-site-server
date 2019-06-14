@@ -147,6 +147,6 @@ if __name__ == '__main__':
 
         except KeyboardInterrupt:
             # Handle CTRL-C pressed by user.
-            print('Stoppping...')
+            print('Stopping...')
             keep_running = False
             cli.stop()

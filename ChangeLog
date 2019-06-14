@@ -1,3 +1,13 @@
+2019-06-14  Theron T. Trout  <theron.trout@stormfish.io>
+
+	* src/server/aurora_local_server.conf.template: Updated config template to fix
+	issues with deprecated settings names.  These are updated and should work
+	correctly now.
+
+	* src/client/run-send-chat.sh: Change name of container to resolve conflicts.
+
+	* src/client/aurora_net_cra_client.py: Fixed typo in "Stopping..." message.
+
 2019-06-05  Theron T. Trout  <theron.trout@stormfish.io>
 
 	* src/server/start-uplink.sh, src/server/stop-uplink.sh: Added scripts to
