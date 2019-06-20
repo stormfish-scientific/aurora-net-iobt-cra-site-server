@@ -63,6 +63,7 @@ decryption is transparent to the user.
 ### 1) Build the Docker Image
 
 $ cd ./docker
+
 $ ./build.sh
 
 ### 2) Configure Server
@@ -95,6 +96,7 @@ installed on the server before you will be able to connect.  To
 generate your public/private key pair, do the following:
 
 $ cd ./src/server
+
 $ ./run-generate_certificates.sh
 
 Make a copy of the file client.key in the ./src/server/public_keys
