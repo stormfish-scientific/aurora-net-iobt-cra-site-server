@@ -16,3 +16,9 @@ core
 
 #Don't store local config
 src/server/aurora_local_server.conf
+
+#Don't include python caches
+__pycache__
+
+#Exclude certain docker build files
+docker/aurora-net-client-image/aurora_net/aurora_net_cra_client.py

@@ -1,5 +1,3 @@
-#!/bin/bash
-
 # AURORA-Net IoBT CRA Site Server
 # Copyright (C) 2019  Stormfish Scientific Corporation
 #
@@ -17,24 +15,19 @@
 # along with this program.  If not, see
 # <http://www.gnu.org/licenses/>.
 
-cd aurora-net-image
+FROM python:3
 
-#docker rmi aurora-net
+WORKDIR /usr/src/app
 
-docker build -t aurora-net .
+COPY requirements.txt ./
 
-# cd ../protobuf-image
+RUN pip install --no-cache-dir -r requirements.txt
 
-# docker rmi protobuf
+RUN mkdir -p /pythonlib
 
-# docker build -t protobuf .
+COPY ./aurora_net /pythonlib/aurora_net
 
-cd ..
+ENV PYTHONPATH=/pythonlib
 
-cd aurora-net-client-image
-
-
-cp ../../src/client/aurora_net_cra_client.py ./aurora_net/aurora_net_cra_client.py
-rm ./aurora_net/aurora_net_cra_client.pyc
-
-docker build -t aurora-net-client .
+#CMD [ "python", "-u", "./your-daemon-or-script.py" ]
+CMD [ "/bin/bash" ]
