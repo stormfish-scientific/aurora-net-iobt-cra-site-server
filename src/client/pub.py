@@ -27,7 +27,10 @@ import os
 
 from pprint import pprint
 
+prefix=None
+
 def print_and_pub(publisher, topic, body):
+    global prefix
 
     if type(topic) is str:
         btopic = topic.encode('utf-8')
@@ -35,12 +38,24 @@ def print_and_pub(publisher, topic, body):
         btopic = topic
         topic = topic.decode('utf-8')
 
+    if type(prefix) is str:
+        bprefix = prefix.encode('utf-8')
+    else:
+        bprefix = prefix
+
+        if prefix is not None:
+            prefix = prefix.decode('utf-8')
+
     if type(body) is str:
         bbody = body.encode('utf-8')
     else:
         bbody = body
         body = body.decode('utf-8')
-        
+
+    if bprefix is not None:
+        bbody = bprefix + bbody
+        body = prefix + body
+
     publisher.send_multipart([btopic, bbody])
     print("[%s] %s" % (topic, body))
             
