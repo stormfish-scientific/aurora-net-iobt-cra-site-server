@@ -31,6 +31,7 @@ if [ "$1" = "cli" ]; then
 	docker run -ti --rm --name aurora-part5.1-pub \
 	       -v ${PWD}/pub.py:/usr/src/app/pub.py \
 	       --network host \
+	       -e PUB_PREFIX="${PUB_PREFIX}" \
 	       -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
 	       aurora-net /bin/bash
 
@@ -39,6 +40,7 @@ if [ "$1" = "cli" ]; then
 	docker run -ti --rm --name aurora-part5.1-pub \
 	       -v ${PWD}/pub.py:/usr/src/app/pub.py \
 	       --network host \
+	       -e PUB_PREFIX="${PUB_PREFIX}" \
 	       -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
 	       aurora-net "$@"
 
@@ -49,6 +51,7 @@ else
     docker run -ti --rm --name aurora-part5.1-pub \
 	   -v ${PWD}/pub.py:/usr/src/app/pub.py \
 	   --network host \
+	   -e PUB_PREFIX="${PUB_PREFIX}" \
 	   -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
 	   aurora-net python -u pub.py "$@"
     

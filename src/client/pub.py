@@ -27,7 +27,10 @@ import os
 
 from pprint import pprint
 
-prefix=None
+if "PUB_PREFIX" in os.environ:
+    prefix=os.environ['PUB_PREFIX']
+else:
+    prefix=None
 
 def print_and_pub(publisher, topic, body):
     global prefix
