@@ -7,7 +7,7 @@ core
 
 #protobuf generated files
 
-*_pb2.py
+#*_pb2.py
 
 #Don't store keys
 */certificates
@@ -22,3 +22,5 @@ __pycache__
 
 #Exclude certain docker build files
 docker/aurora-net-client-image/aurora_net/aurora_net_cra_client.py
+
+*.bad
