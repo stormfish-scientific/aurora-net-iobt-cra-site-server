@@ -204,6 +204,8 @@ class BasicProxy(object):
             return zmq.PUSH
         if type_name == 'PULL':
             return zmq.PULL
+        if type_name == 'PAIR':
+            return zmq.PAIR
 
         raise Exception('Unknown socket type: %s' % type_name)
 
