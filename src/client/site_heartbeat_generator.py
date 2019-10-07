@@ -8,6 +8,20 @@ import intersite_management_pb2
 from pprint import pprint
 
 
+def decode_and_print_heartbeat(data):
+
+    if data is None:
+        print("No Data")
+        return
+
+    broadcast = intersite_management_pb2.IntersiteStatusBroadcast()
+
+    broadcast.ParseFromString(data)
+
+    pprint({"Decoded msg": broadcast})
+    return
+
+
 if __name__ == '__main__':
 
     # Create a new instance of the AURORA CLI using the
@@ -16,14 +30,14 @@ if __name__ == '__main__':
             os.environ['AURORA_CRA_LOCAL_PROXY_UPLINK_PORT'],
             os.environ['AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT'])
 
-    # Start the client threads
-    aurora_cli.start()
-
     # Store topic for easy access
     intersite_mgmt_topic = b'global:intersite_management'
 
     # Subscribe to the main topic
     aurora_cli.subscribe(intersite_mgmt_topic)
+
+    # Start the client threads
+    aurora_cli.start()
 
     keep_running = True
 
@@ -60,6 +74,7 @@ if __name__ == '__main__':
                 intersite_management_pb2.StatusColorCodes.YELLOW
             )
 
+
             broadcast.system_heartbeat.system_instance.name = "A test system"
             broadcast.system_heartbeat.short_status_message = (
                 "System is initializiing..."
@@ -67,7 +82,7 @@ if __name__ == '__main__':
 
             # Reset counter
             counter = 0
-            
+
             data = broadcast.SerializeToString()
 
             pprint({'to publish': data})
@@ -82,7 +97,8 @@ if __name__ == '__main__':
             # If we received some frames...
             if frames:
                 # Print them
-                pprint(frames)
+                #pprint(frames)
+                decode_and_print_heartbeat(frames[1])
 
         except queue.Empty:
             # This exception is thrown when the queue wait for data
