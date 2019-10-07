@@ -67,6 +67,8 @@ message SystemHeartbeat {
     string short_status_message = 4;
 
     string detailed_status_message = 5;
+
+    float unix_timestamp = 6;
 }
 
 
