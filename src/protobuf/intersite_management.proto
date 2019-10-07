@@ -1,0 +1,81 @@
+syntax = "proto3";
+
+// Set of codes for overall site status
+enum StatusColorCodes {
+    // Fully operational
+    GREEN = 0;
+    // Partially operational
+    YELLOW = 1;
+    // Not operational; Required functionality missing
+    RED = 2;
+}
+
+
+// Message for identifying a site
+message SiteIdentifier {
+    // Site UUID
+    string site_uuid = 1;
+    // Site Name
+    string site_name = 2;
+    // Organization name, e.g. Univerisity of ...
+    string organization_name = 3;
+}
+
+
+// Message for identifying a system (shared service, experimental cluster, etc) type
+message SystemType {
+    // System type uuid
+    string system_type_uuid = 1;
+
+    // System type name
+    string name = 2;
+
+    // System type description
+    string description = 3;
+}
+
+// Message for identifying an instance system (shared service, experimental cluster, etc) type
+message SystemInstance {
+    // System type uuid
+    string system_type_uuid = 1;
+
+    // System instance uuid
+    string instance_uuid = 2;
+
+    // System type name
+    string name = 3;
+
+    // System type description
+    string description = 4;
+
+    // Tags
+    repeated string tags = 5;
+
+    // Properties key/value pair
+    map <string, string> properties = 6;
+}
+
+
+// A periodic heartbeat message to inform other sites about the status of services
+message SystemHeartbeat {
+    SystemType system_type = 1;
+
+    SystemInstance system_instance = 2;
+
+    StatusColorCodes system_status_color_code = 3;
+
+    string short_status_message = 4;
+
+    string detailed_status_message = 5;
+}
+
+
+// A top level wrapper message
+message IntersiteStatusBroadcast
+{
+    SiteIdentifier site_id = 1;
+
+    oneof broadcast {
+        SystemHeartbeat system_heartbeat = 2;
+    }
+}
