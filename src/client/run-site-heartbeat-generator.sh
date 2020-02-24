@@ -58,7 +58,7 @@ else
     	   -v ${PWD}/:/usr/src/app/ \
 	   --network host \
 	   -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
-	   -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT=tcp://localhost:9102 \
+	   -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT=tcp://localhost:9103 \
 	   -e SITE_UUID=111 \
 	   -e SITE_NAME="Test Site" \
 	   -e ORG_NAME="Test Org" \
