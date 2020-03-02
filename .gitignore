@@ -7,7 +7,7 @@ core
 
 #protobuf generated files
 
-*_pb2.py
+#*_pb2.py
 
 #Don't store keys
 */certificates

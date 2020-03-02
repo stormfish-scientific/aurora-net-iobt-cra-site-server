@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+option java_package = "edu.ucla.cell_phone_telemetry";
+option java_outer_classname = "UCLACellPhoneProtos";
+
+message Vector2
+{
+    float x = 1;
+    float y = 2;
+}
+
+message Vector3
+{
+    float x = 1;
+    float y = 2;
+    float z = 3;    
+}
+
+message Vector4
+{
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    float w = 4;    
+}
+
+message Quaternion
+{
+    float x = 1;
+    float y = 2;
+    float z = 3;
+    float w = 4;
+}
+
+message LatLonAltitude
+{
+    double latitude = 1;
+    double longitude = 2;
+    double altitude_meters = 3;
+}
+
+message CellPhoneTelemetry
+{
+    // A string encoded representation of the time when the event occurred
+    string event_time = 1;
+
+    // The event time encoded as a timestamp
+    double timestamp = 2;
+
+    // Encodes the magnetic field in x,y,z
+    Vector3 magnet_field = 10;
+
+    // Encodes the gyroscope measurement from the phone
+    // Note that this might be a Quaternian encoded as a Vector3
+    // See: https://stackoverflow.com/questions/18587262/get-quaternion-from-android-gyroscope
+    Vector3 gyroscope = 20;
+
+    // The linear acceleration encoded as a vector
+    Vector3 linear_acceleration = 30;
+
+    // The angular acceleration about each axis
+    Vector3 angular_acceleration = 40;
+
+    // Gravity vector
+    Vector3 gravity = 50;
+
+    // GPS coordiante
+    LatLonAltitude lat_lon_alt = 60;
+
+    // Ambient temperature celsius
+    float ambient_temperature_c = 70;
+
+    // Light value in lux
+    float light_lx = 80;
+
+    // Ambient air pressure in milibars
+    float ambient_air_pressure_mbar = 90;
+
+    // Relative humidity (%)
+    float relative_humidity = 100;
+
+    // Device temperature celsius
+    float device_temperature_c = 110;    
+}
+
