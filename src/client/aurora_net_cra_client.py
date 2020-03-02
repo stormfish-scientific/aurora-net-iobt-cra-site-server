@@ -134,7 +134,7 @@ if __name__ == '__main__':
                             frames[1] + b' ends in 7!')
 
             # Print out the frames received.
-            pprint(frames)
+            # pprint(frames)
 
         except queue.Empty:
             # Handle the condition when no cli.get() method

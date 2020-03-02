@@ -65,7 +65,8 @@ def main():
     args = parser.parse_args()
 
     # Setup default topics to use if none specified on command line
-    default_topics = [b'system', b'data-1', b'data-2']
+    # default_topics = [b'system', b'data-1', b'data-2']
+    default_topics = [b'']
 
     # If args.topic is None then no topics specified on command line
     if args.topic is None:

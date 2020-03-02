@@ -18,7 +18,33 @@ def decode_and_print_heartbeat(data):
 
     broadcast.ParseFromString(data)
 
-    pprint({"Decoded msg": broadcast})
+    color_code = ''
+
+    if (
+            broadcast.system_heartbeat.system_status_color_code ==
+            intersite_management_pb2.StatusColorCodes.GREEN
+    ):
+        color_code = 'GREEN'
+    elif (
+            broadcast.system_heartbeat.system_status_color_code ==
+            intersite_management_pb2.StatusColorCodes.YELLOW
+    ):
+        color_code = 'YELLOW'
+    elif (
+            broadcast.system_heartbeat.system_status_color_code ==
+            intersite_management_pb2.StatusColorCodes.RED
+    ):
+        color_code = 'RED'
+    else:
+        color_code = 'UNKNOWN'
+
+    print("[%s] %s [%s] %s" % (
+        color_code,
+        broadcast.site_id.site_name,
+        broadcast.system_heartbeat.system_instance.name,
+        broadcast.system_heartbeat.short_status_message
+    ))
+
     return
 
 
@@ -85,7 +111,7 @@ if __name__ == '__main__':
 
             data = broadcast.SerializeToString()
 
-            pprint({'to publish': data})
+            # pprint({'to publish': data})
 
             aurora_cli.publish(intersite_mgmt_topic, data)
 
@@ -97,7 +123,7 @@ if __name__ == '__main__':
             # If we received some frames...
             if frames:
                 # Print them
-                #pprint(frames)
+                # pprint(frames)
                 decode_and_print_heartbeat(frames[1])
 
         except queue.Empty:
@@ -105,7 +131,7 @@ if __name__ == '__main__':
             # expires with nothing in the queue
             # Nothing to do... move along.
 
-            print('Queue empty')
+            # print('Queue empty')
 
             pass
 

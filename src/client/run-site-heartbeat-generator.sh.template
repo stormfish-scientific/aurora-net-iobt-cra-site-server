@@ -22,6 +22,13 @@
 # For: CCDC ARL - US Army Research Laboratory, Battlefield Information
 # Processing Branch
 
+AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101
+AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT=tcp://localhost:9102
+
+SITE_UUID="UPDATE_ME"
+SITE_NAME="SITE_NAME"
+ORG_NAME="ORG_NAME"
+
 if [ "$1" = "cli" ]; then
     
     shift
@@ -31,11 +38,11 @@ if [ "$1" = "cli" ]; then
 	docker run -ti --rm \
 	       -v ${PWD}/:/usr/src/app/ \
 	       --network host \
-	       -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
-	       -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT=tcp://localhost:9102 \
-	       -e SITE_UUID=111 \
-	       -e SITE_NAME="Test Site" \
-	       -e ORG_NAME="Test Org" \
+	       -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT="${AURORA_CRA_LOCAL_PROXY_UPLINK_PORT}" \
+	       -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT="${AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT}" \
+	       -e SITE_UUID="${SITE_UUID}" \
+	       -e SITE_NAME="${SITE_NAME}" \
+	       -e ORG_NAME="${ORG_NAME}" \
 	       aurora-net-client /bin/bash
 
     else
@@ -43,11 +50,11 @@ if [ "$1" = "cli" ]; then
 	docker run -ti --rm \
 	       -v ${PWD}/:/usr/src/app/ \
 	       --network host \
-	       -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
-	       -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT=tcp://localhost:9102 \
-	       -e SITE_UUID=111 \
-	       -e SITE_NAME="Test Site" \
-	       -e ORG_NAME="Test Org" \
+	       -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT="${AURORA_CRA_LOCAL_PROXY_UPLINK_PORT}" \
+	       -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT="${AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT}" \
+	       -e SITE_UUID="${SITE_UUID}" \
+	       -e SITE_NAME="${SITE_NAME}" \
+	       -e ORG_NAME="${ORG_NAME}" \
 	       aurora-net-client "$@"
 
     fi
@@ -57,11 +64,11 @@ else
     docker run -ti --rm \
     	   -v ${PWD}/:/usr/src/app/ \
 	   --network host \
-	   -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT=tcp://localhost:9101 \
-	   -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT=tcp://localhost:9103 \
-	   -e SITE_UUID=111 \
-	   -e SITE_NAME="Test Site" \
-	   -e ORG_NAME="Test Org" \
+	   -e AURORA_CRA_LOCAL_PROXY_UPLINK_PORT="${AURORA_CRA_LOCAL_PROXY_UPLINK_PORT}" \
+	   -e AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT="${AURORA_CRA_LOCAL_PROXY_DOWNLINK_PORT}" \
+	   -e SITE_UUID="${SITE_UUID}" \
+	   -e SITE_NAME="${SITE_NAME}" \
+	   -e ORG_NAME="${ORG_NAME}" \
     	   aurora-net-client python -u site_heartbeat_generator.py "$@"
 
 fi

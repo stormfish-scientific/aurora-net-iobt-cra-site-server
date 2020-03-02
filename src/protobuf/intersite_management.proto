@@ -86,17 +86,17 @@ message IntersiteStatusBroadcast
 }
 
 
-site_id
-{
-    site_uuid: "111"
-    site_name: "Test Site"
-    organization_name: "Test Org"
-}
-system_heartbeat {
-    system_instance {
-	name: "A test system"
-    }
-    system_status_color_code: YELLOW
-    short_status_message: "System is initializiing..."
-}
+// site_id
+// {
+//     site_uuid: "111"
+//     site_name: "Test Site"
+//     organization_name: "Test Org"
+// }
+// system_heartbeat {
+//     system_instance {
+// 	name: "A test system"
+//     }
+//     system_status_color_code: YELLOW
+//     short_status_message: "System is initializiing..."
+// }
 

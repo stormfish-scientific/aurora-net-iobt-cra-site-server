@@ -24,3 +24,5 @@ __pycache__
 docker/aurora-net-client-image/aurora_net/aurora_net_cra_client.py
 
 *.bad
+
+run-site-heartbeat-generator.sh
