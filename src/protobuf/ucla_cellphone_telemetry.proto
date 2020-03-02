@@ -48,7 +48,7 @@ message CellPhoneTelemetry
     double timestamp = 2;
 
     // Encodes the magnetic field in x,y,z
-    Vector3 magnet_field = 10;
+    Vector3 magnetic_field = 10;
 
     // Encodes the gyroscope measurement from the phone
     // Note that this might be a Quaternian encoded as a Vector3

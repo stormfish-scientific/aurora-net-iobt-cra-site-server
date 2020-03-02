@@ -2936,25 +2936,25 @@ public final class UCLACellPhoneProtos {
      * Encodes the magnetic field in x,y,z
      * </pre>
      *
-     * <code>optional .Vector3 magnet_field = 10;</code>
+     * <code>optional .Vector3 magnetic_field = 10;</code>
      */
-    boolean hasMagnetField();
+    boolean hasMagneticField();
     /**
      * <pre>
      * Encodes the magnetic field in x,y,z
      * </pre>
      *
-     * <code>optional .Vector3 magnet_field = 10;</code>
+     * <code>optional .Vector3 magnetic_field = 10;</code>
      */
-    edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 getMagnetField();
+    edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 getMagneticField();
     /**
      * <pre>
      * Encodes the magnetic field in x,y,z
      * </pre>
      *
-     * <code>optional .Vector3 magnet_field = 10;</code>
+     * <code>optional .Vector3 magnetic_field = 10;</code>
      */
-    edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder getMagnetFieldOrBuilder();
+    edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder getMagneticFieldOrBuilder();
 
     /**
      * <pre>
@@ -3191,13 +3191,13 @@ public final class UCLACellPhoneProtos {
             }
             case 82: {
               edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder subBuilder = null;
-              if (magnetField_ != null) {
-                subBuilder = magnetField_.toBuilder();
+              if (magneticField_ != null) {
+                subBuilder = magneticField_.toBuilder();
               }
-              magnetField_ = input.readMessage(edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.parser(), extensionRegistry);
+              magneticField_ = input.readMessage(edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.parser(), extensionRegistry);
               if (subBuilder != null) {
-                subBuilder.mergeFrom(magnetField_);
-                magnetField_ = subBuilder.buildPartial();
+                subBuilder.mergeFrom(magneticField_);
+                magneticField_ = subBuilder.buildPartial();
               }
 
               break;
@@ -3370,37 +3370,37 @@ public final class UCLACellPhoneProtos {
       return timestamp_;
     }
 
-    public static final int MAGNET_FIELD_FIELD_NUMBER = 10;
-    private edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 magnetField_;
+    public static final int MAGNETIC_FIELD_FIELD_NUMBER = 10;
+    private edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 magneticField_;
     /**
      * <pre>
      * Encodes the magnetic field in x,y,z
      * </pre>
      *
-     * <code>optional .Vector3 magnet_field = 10;</code>
+     * <code>optional .Vector3 magnetic_field = 10;</code>
      */
-    public boolean hasMagnetField() {
-      return magnetField_ != null;
+    public boolean hasMagneticField() {
+      return magneticField_ != null;
     }
     /**
      * <pre>
      * Encodes the magnetic field in x,y,z
      * </pre>
      *
-     * <code>optional .Vector3 magnet_field = 10;</code>
+     * <code>optional .Vector3 magnetic_field = 10;</code>
      */
-    public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 getMagnetField() {
-      return magnetField_ == null ? edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.getDefaultInstance() : magnetField_;
+    public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 getMagneticField() {
+      return magneticField_ == null ? edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.getDefaultInstance() : magneticField_;
     }
     /**
      * <pre>
      * Encodes the magnetic field in x,y,z
      * </pre>
      *
-     * <code>optional .Vector3 magnet_field = 10;</code>
+     * <code>optional .Vector3 magnetic_field = 10;</code>
      */
-    public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder getMagnetFieldOrBuilder() {
-      return getMagnetField();
+    public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder getMagneticFieldOrBuilder() {
+      return getMagneticField();
     }
 
     public static final int GYROSCOPE_FIELD_NUMBER = 20;
@@ -3657,8 +3657,8 @@ public final class UCLACellPhoneProtos {
       if (timestamp_ != 0D) {
         output.writeDouble(2, timestamp_);
       }
-      if (magnetField_ != null) {
-        output.writeMessage(10, getMagnetField());
+      if (magneticField_ != null) {
+        output.writeMessage(10, getMagneticField());
       }
       if (gyroscope_ != null) {
         output.writeMessage(20, getGyroscope());
@@ -3704,9 +3704,9 @@ public final class UCLACellPhoneProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeDoubleSize(2, timestamp_);
       }
-      if (magnetField_ != null) {
+      if (magneticField_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, getMagnetField());
+          .computeMessageSize(10, getMagneticField());
       }
       if (gyroscope_ != null) {
         size += com.google.protobuf.CodedOutputStream
@@ -3770,10 +3770,10 @@ public final class UCLACellPhoneProtos {
           java.lang.Double.doubleToLongBits(getTimestamp())
           == java.lang.Double.doubleToLongBits(
               other.getTimestamp()));
-      result = result && (hasMagnetField() == other.hasMagnetField());
-      if (hasMagnetField()) {
-        result = result && getMagnetField()
-            .equals(other.getMagnetField());
+      result = result && (hasMagneticField() == other.hasMagneticField());
+      if (hasMagneticField()) {
+        result = result && getMagneticField()
+            .equals(other.getMagneticField());
       }
       result = result && (hasGyroscope() == other.hasGyroscope());
       if (hasGyroscope()) {
@@ -3835,9 +3835,9 @@ public final class UCLACellPhoneProtos {
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           java.lang.Double.doubleToLongBits(getTimestamp()));
-      if (hasMagnetField()) {
-        hash = (37 * hash) + MAGNET_FIELD_FIELD_NUMBER;
-        hash = (53 * hash) + getMagnetField().hashCode();
+      if (hasMagneticField()) {
+        hash = (37 * hash) + MAGNETIC_FIELD_FIELD_NUMBER;
+        hash = (53 * hash) + getMagneticField().hashCode();
       }
       if (hasGyroscope()) {
         hash = (37 * hash) + GYROSCOPE_FIELD_NUMBER;
@@ -3996,11 +3996,11 @@ public final class UCLACellPhoneProtos {
 
         timestamp_ = 0D;
 
-        if (magnetFieldBuilder_ == null) {
-          magnetField_ = null;
+        if (magneticFieldBuilder_ == null) {
+          magneticField_ = null;
         } else {
-          magnetField_ = null;
-          magnetFieldBuilder_ = null;
+          magneticField_ = null;
+          magneticFieldBuilder_ = null;
         }
         if (gyroscopeBuilder_ == null) {
           gyroscope_ = null;
@@ -4066,10 +4066,10 @@ public final class UCLACellPhoneProtos {
         edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry result = new edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry(this);
         result.eventTime_ = eventTime_;
         result.timestamp_ = timestamp_;
-        if (magnetFieldBuilder_ == null) {
-          result.magnetField_ = magnetField_;
+        if (magneticFieldBuilder_ == null) {
+          result.magneticField_ = magneticField_;
         } else {
-          result.magnetField_ = magnetFieldBuilder_.build();
+          result.magneticField_ = magneticFieldBuilder_.build();
         }
         if (gyroscopeBuilder_ == null) {
           result.gyroscope_ = gyroscope_;
@@ -4149,8 +4149,8 @@ public final class UCLACellPhoneProtos {
         if (other.getTimestamp() != 0D) {
           setTimestamp(other.getTimestamp());
         }
-        if (other.hasMagnetField()) {
-          mergeMagnetField(other.getMagnetField());
+        if (other.hasMagneticField()) {
+          mergeMagneticField(other.getMagneticField());
         }
         if (other.hasGyroscope()) {
           mergeGyroscope(other.getGyroscope());
@@ -4335,31 +4335,31 @@ public final class UCLACellPhoneProtos {
         return this;
       }
 
-      private edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 magnetField_ = null;
+      private edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 magneticField_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder> magnetFieldBuilder_;
+          edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder> magneticFieldBuilder_;
       /**
        * <pre>
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public boolean hasMagnetField() {
-        return magnetFieldBuilder_ != null || magnetField_ != null;
+      public boolean hasMagneticField() {
+        return magneticFieldBuilder_ != null || magneticField_ != null;
       }
       /**
        * <pre>
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 getMagnetField() {
-        if (magnetFieldBuilder_ == null) {
-          return magnetField_ == null ? edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.getDefaultInstance() : magnetField_;
+      public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 getMagneticField() {
+        if (magneticFieldBuilder_ == null) {
+          return magneticField_ == null ? edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.getDefaultInstance() : magneticField_;
         } else {
-          return magnetFieldBuilder_.getMessage();
+          return magneticFieldBuilder_.getMessage();
         }
       }
       /**
@@ -4367,17 +4367,17 @@ public final class UCLACellPhoneProtos {
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public Builder setMagnetField(edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 value) {
-        if (magnetFieldBuilder_ == null) {
+      public Builder setMagneticField(edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 value) {
+        if (magneticFieldBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          magnetField_ = value;
+          magneticField_ = value;
           onChanged();
         } else {
-          magnetFieldBuilder_.setMessage(value);
+          magneticFieldBuilder_.setMessage(value);
         }
 
         return this;
@@ -4387,15 +4387,15 @@ public final class UCLACellPhoneProtos {
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public Builder setMagnetField(
+      public Builder setMagneticField(
           edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder builderForValue) {
-        if (magnetFieldBuilder_ == null) {
-          magnetField_ = builderForValue.build();
+        if (magneticFieldBuilder_ == null) {
+          magneticField_ = builderForValue.build();
           onChanged();
         } else {
-          magnetFieldBuilder_.setMessage(builderForValue.build());
+          magneticFieldBuilder_.setMessage(builderForValue.build());
         }
 
         return this;
@@ -4405,19 +4405,19 @@ public final class UCLACellPhoneProtos {
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public Builder mergeMagnetField(edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 value) {
-        if (magnetFieldBuilder_ == null) {
-          if (magnetField_ != null) {
-            magnetField_ =
-              edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.newBuilder(magnetField_).mergeFrom(value).buildPartial();
+      public Builder mergeMagneticField(edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 value) {
+        if (magneticFieldBuilder_ == null) {
+          if (magneticField_ != null) {
+            magneticField_ =
+              edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.newBuilder(magneticField_).mergeFrom(value).buildPartial();
           } else {
-            magnetField_ = value;
+            magneticField_ = value;
           }
           onChanged();
         } else {
-          magnetFieldBuilder_.mergeFrom(value);
+          magneticFieldBuilder_.mergeFrom(value);
         }
 
         return this;
@@ -4427,15 +4427,15 @@ public final class UCLACellPhoneProtos {
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public Builder clearMagnetField() {
-        if (magnetFieldBuilder_ == null) {
-          magnetField_ = null;
+      public Builder clearMagneticField() {
+        if (magneticFieldBuilder_ == null) {
+          magneticField_ = null;
           onChanged();
         } else {
-          magnetField_ = null;
-          magnetFieldBuilder_ = null;
+          magneticField_ = null;
+          magneticFieldBuilder_ = null;
         }
 
         return this;
@@ -4445,26 +4445,26 @@ public final class UCLACellPhoneProtos {
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder getMagnetFieldBuilder() {
+      public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder getMagneticFieldBuilder() {
         
         onChanged();
-        return getMagnetFieldFieldBuilder().getBuilder();
+        return getMagneticFieldFieldBuilder().getBuilder();
       }
       /**
        * <pre>
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
-      public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder getMagnetFieldOrBuilder() {
-        if (magnetFieldBuilder_ != null) {
-          return magnetFieldBuilder_.getMessageOrBuilder();
+      public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder getMagneticFieldOrBuilder() {
+        if (magneticFieldBuilder_ != null) {
+          return magneticFieldBuilder_.getMessageOrBuilder();
         } else {
-          return magnetField_ == null ?
-              edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.getDefaultInstance() : magnetField_;
+          return magneticField_ == null ?
+              edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.getDefaultInstance() : magneticField_;
         }
       }
       /**
@@ -4472,20 +4472,20 @@ public final class UCLACellPhoneProtos {
        * Encodes the magnetic field in x,y,z
        * </pre>
        *
-       * <code>optional .Vector3 magnet_field = 10;</code>
+       * <code>optional .Vector3 magnetic_field = 10;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder> 
-          getMagnetFieldFieldBuilder() {
-        if (magnetFieldBuilder_ == null) {
-          magnetFieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getMagneticFieldFieldBuilder() {
+        if (magneticFieldBuilder_ == null) {
+          magneticFieldBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3.Builder, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3OrBuilder>(
-                  getMagnetField(),
+                  getMagneticField(),
                   getParentForChildren(),
                   isClean());
-          magnetField_ = null;
+          magneticField_ = null;
         }
-        return magnetFieldBuilder_;
+        return magneticFieldBuilder_;
       }
 
       private edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.Vector3 gyroscope_ = null;
@@ -5555,19 +5555,19 @@ public final class UCLACellPhoneProtos {
       " \001(\002\"8\n\nQuaternion\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002" +
       "\022\t\n\001z\030\003 \001(\002\022\t\n\001w\030\004 \001(\002\"N\n\016LatLonAltitude" +
       "\022\020\n\010latitude\030\001 \001(\001\022\021\n\tlongitude\030\002 \001(\001\022\027\n" +
-      "\017altitude_meters\030\003 \001(\001\"\225\003\n\022CellPhoneTele" +
+      "\017altitude_meters\030\003 \001(\001\"\227\003\n\022CellPhoneTele" +
       "metry\022\022\n\nevent_time\030\001 \001(\t\022\021\n\ttimestamp\030\002" +
-      " \001(\001\022\036\n\014magnet_field\030\n \001(\0132\010.Vector3\022\033\n\t",
-      "gyroscope\030\024 \001(\0132\010.Vector3\022%\n\023linear_acce" +
-      "leration\030\036 \001(\0132\010.Vector3\022&\n\024angular_acce" +
-      "leration\030( \001(\0132\010.Vector3\022\031\n\007gravity\0302 \001(" +
-      "\0132\010.Vector3\022$\n\013lat_lon_alt\030< \001(\0132\017.LatLo" +
-      "nAltitude\022\035\n\025ambient_temperature_c\030F \001(\002" +
-      "\022\020\n\010light_lx\030P \001(\002\022!\n\031ambient_air_pressu" +
-      "re_mbar\030Z \001(\002\022\031\n\021relative_humidity\030d \001(\002" +
-      "\022\034\n\024device_temperature_c\030n \001(\002B4\n\035edu.uc" +
-      "la.cell_phone_telemetryB\023UCLACellPhonePr" +
-      "otosb\006proto3"
+      " \001(\001\022 \n\016magnetic_field\030\n \001(\0132\010.Vector3\022\033",
+      "\n\tgyroscope\030\024 \001(\0132\010.Vector3\022%\n\023linear_ac" +
+      "celeration\030\036 \001(\0132\010.Vector3\022&\n\024angular_ac" +
+      "celeration\030( \001(\0132\010.Vector3\022\031\n\007gravity\0302 " +
+      "\001(\0132\010.Vector3\022$\n\013lat_lon_alt\030< \001(\0132\017.Lat" +
+      "LonAltitude\022\035\n\025ambient_temperature_c\030F \001" +
+      "(\002\022\020\n\010light_lx\030P \001(\002\022!\n\031ambient_air_pres" +
+      "sure_mbar\030Z \001(\002\022\031\n\021relative_humidity\030d \001" +
+      "(\002\022\034\n\024device_temperature_c\030n \001(\002B4\n\035edu." +
+      "ucla.cell_phone_telemetryB\023UCLACellPhone" +
+      "Protosb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5616,7 +5616,7 @@ public final class UCLACellPhoneProtos {
     internal_static_CellPhoneTelemetry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CellPhoneTelemetry_descriptor,
-        new java.lang.String[] { "EventTime", "Timestamp", "MagnetField", "Gyroscope", "LinearAcceleration", "AngularAcceleration", "Gravity", "LatLonAlt", "AmbientTemperatureC", "LightLx", "AmbientAirPressureMbar", "RelativeHumidity", "DeviceTemperatureC", });
+        new java.lang.String[] { "EventTime", "Timestamp", "MagneticField", "Gyroscope", "LinearAcceleration", "AngularAcceleration", "Gravity", "LatLonAlt", "AmbientTemperatureC", "LightLx", "AmbientAirPressureMbar", "RelativeHumidity", "DeviceTemperatureC", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ucla_cellphone_telemetry.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x1eucla_cellphone_telemetry.proto\"\x1f\n\x07Vector2\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"*\n\x07Vector3\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"5\n\x07Vector4\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"8\n\nQuaternion\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"N\n\x0eLatLonAltitude\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x12\x17\n\x0f\x61ltitude_meters\x18\x03 \x01(\x01\"\x95\x03\n\x12\x43\x65llPhoneTelemetry\x12\x12\n\nevent_time\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x01\x12\x1e\n\x0cmagnet_field\x18\n \x01(\x0b\x32\x08.Vector3\x12\x1b\n\tgyroscope\x18\x14 \x01(\x0b\x32\x08.Vector3\x12%\n\x13linear_acceleration\x18\x1e \x01(\x0b\x32\x08.Vector3\x12&\n\x14\x61ngular_acceleration\x18( \x01(\x0b\x32\x08.Vector3\x12\x19\n\x07gravity\x18\x32 \x01(\x0b\x32\x08.Vector3\x12$\n\x0blat_lon_alt\x18< \x01(\x0b\x32\x0f.LatLonAltitude\x12\x1d\n\x15\x61mbient_temperature_c\x18\x46 \x01(\x02\x12\x10\n\x08light_lx\x18P \x01(\x02\x12!\n\x19\x61mbient_air_pressure_mbar\x18Z \x01(\x02\x12\x19\n\x11relative_humidity\x18\x64 \x01(\x02\x12\x1c\n\x14\x64\x65vice_temperature_c\x18n \x01(\x02\x42\x34\n\x1d\x65\x64u.ucla.cell_phone_telemetryB\x13UCLACellPhoneProtosb\x06proto3')
+  serialized_pb=_b('\n\x1eucla_cellphone_telemetry.proto\"\x1f\n\x07Vector2\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"*\n\x07Vector3\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"5\n\x07Vector4\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"8\n\nQuaternion\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"N\n\x0eLatLonAltitude\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x12\x17\n\x0f\x61ltitude_meters\x18\x03 \x01(\x01\"\x97\x03\n\x12\x43\x65llPhoneTelemetry\x12\x12\n\nevent_time\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x01\x12 \n\x0emagnetic_field\x18\n \x01(\x0b\x32\x08.Vector3\x12\x1b\n\tgyroscope\x18\x14 \x01(\x0b\x32\x08.Vector3\x12%\n\x13linear_acceleration\x18\x1e \x01(\x0b\x32\x08.Vector3\x12&\n\x14\x61ngular_acceleration\x18( \x01(\x0b\x32\x08.Vector3\x12\x19\n\x07gravity\x18\x32 \x01(\x0b\x32\x08.Vector3\x12$\n\x0blat_lon_alt\x18< \x01(\x0b\x32\x0f.LatLonAltitude\x12\x1d\n\x15\x61mbient_temperature_c\x18\x46 \x01(\x02\x12\x10\n\x08light_lx\x18P \x01(\x02\x12!\n\x19\x61mbient_air_pressure_mbar\x18Z \x01(\x02\x12\x19\n\x11relative_humidity\x18\x64 \x01(\x02\x12\x1c\n\x14\x64\x65vice_temperature_c\x18n \x01(\x02\x42\x34\n\x1d\x65\x64u.ucla.cell_phone_telemetryB\x13UCLACellPhoneProtosb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -280,7 +280,7 @@ _CELLPHONETELEMETRY = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='magnet_field', full_name='CellPhoneTelemetry.magnet_field', index=2,
+      name='magnetic_field', full_name='CellPhoneTelemetry.magnetic_field', index=2,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -369,10 +369,10 @@ _CELLPHONETELEMETRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=305,
-  serialized_end=710,
+  serialized_end=712,
 )
 
-_CELLPHONETELEMETRY.fields_by_name['magnet_field'].message_type = _VECTOR3
+_CELLPHONETELEMETRY.fields_by_name['magnetic_field'].message_type = _VECTOR3
 _CELLPHONETELEMETRY.fields_by_name['gyroscope'].message_type = _VECTOR3
 _CELLPHONETELEMETRY.fields_by_name['linear_acceleration'].message_type = _VECTOR3
 _CELLPHONETELEMETRY.fields_by_name['angular_acceleration'].message_type = _VECTOR3
