@@ -107,12 +107,12 @@ def main():
 
             while counter > 0:
 
-                # Use modules to alternate topic 
+                # Use modulus to alternate topic 
                 if num % 2 == 0:
                     topic = 'data-1'
                 else:
                     topic = 'data-2'
-                    
+
                 payload = 'Message number %s' % (num)
 
                 print_and_pub(publisher, topic, payload)
