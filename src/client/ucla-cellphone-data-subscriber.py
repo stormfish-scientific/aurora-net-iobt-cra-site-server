@@ -36,7 +36,7 @@ def decode_and_print_cell_phone_telemetry(cellphone_data):
 
     decoded_data.ParseFromString(cellphone_data)
 
-    pprint({'decoded_data': decoded_data})
+    # pprint({'decoded_data': decoded_data})
 
     if decoded_data.event_time != '':
         print('event_time            : ' +
@@ -68,7 +68,7 @@ def decode_and_print_cell_phone_telemetry(cellphone_data):
 
     if decoded_data.HasField('lat_lon_alt'):
         print('lat_lon_alt            :\n' +
-              str(decoded_data.gravity))
+              str(decoded_data.lat_lon_alt))
 
     print('ambient_temperature_c  : ' +
           str(decoded_data.ambient_temperature_c))
@@ -157,7 +157,11 @@ def main():
 
             message = subscriber.recv_multipart()
 
-            if message[0] == b'cellphone-telemetry':
+            if (
+                    message[0] == b'cellphone-telemetry'
+                    or
+                    message[0] == b'stormfish:phone-telemetry'
+            ):
                 decode_and_print_cell_phone_telemetry(message[1])
             else:
                 print('Received: [%s] %s' % (message[0].decode('utf-8'),
