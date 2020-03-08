@@ -41,6 +41,9 @@ message LatLonAltitude
 
 message CellPhoneTelemetry
 {
+    // A string identifier for the device
+    string device_id = 200;
+
     // A string encoded representation of the time when the event occurred
     string event_time = 1;
 
