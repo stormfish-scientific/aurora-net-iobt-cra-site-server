@@ -2906,6 +2906,24 @@ public final class UCLACellPhoneProtos {
 
     /**
      * <pre>
+     * A string identifier for the device
+     * </pre>
+     *
+     * <code>optional string device_id = 200;</code>
+     */
+    java.lang.String getDeviceId();
+    /**
+     * <pre>
+     * A string identifier for the device
+     * </pre>
+     *
+     * <code>optional string device_id = 200;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceIdBytes();
+
+    /**
+     * <pre>
      * A string encoded representation of the time when the event occurred
      * </pre>
      *
@@ -3144,6 +3162,7 @@ public final class UCLACellPhoneProtos {
       super(builder);
     }
     private CellPhoneTelemetry() {
+      deviceId_ = "";
       eventTime_ = "";
       timestamp_ = 0D;
       ambientTemperatureC_ = 0F;
@@ -3292,6 +3311,12 @@ public final class UCLACellPhoneProtos {
               deviceTemperatureC_ = input.readFloat();
               break;
             }
+            case 1602: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceId_ = s;
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -3313,6 +3338,48 @@ public final class UCLACellPhoneProtos {
       return edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.internal_static_CellPhoneTelemetry_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry.class, edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry.Builder.class);
+    }
+
+    public static final int DEVICE_ID_FIELD_NUMBER = 200;
+    private volatile java.lang.Object deviceId_;
+    /**
+     * <pre>
+     * A string identifier for the device
+     * </pre>
+     *
+     * <code>optional string device_id = 200;</code>
+     */
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * A string identifier for the device
+     * </pre>
+     *
+     * <code>optional string device_id = 200;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int EVENT_TIME_FIELD_NUMBER = 1;
@@ -3690,6 +3757,9 @@ public final class UCLACellPhoneProtos {
       if (deviceTemperatureC_ != 0F) {
         output.writeFloat(110, deviceTemperatureC_);
       }
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 200, deviceId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -3748,6 +3818,9 @@ public final class UCLACellPhoneProtos {
         size += com.google.protobuf.CodedOutputStream
           .computeFloatSize(110, deviceTemperatureC_);
       }
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(200, deviceId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -3764,6 +3837,8 @@ public final class UCLACellPhoneProtos {
       edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry other = (edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry) obj;
 
       boolean result = true;
+      result = result && getDeviceId()
+          .equals(other.getDeviceId());
       result = result && getEventTime()
           .equals(other.getEventTime());
       result = result && (
@@ -3830,6 +3905,8 @@ public final class UCLACellPhoneProtos {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptorForType().hashCode();
+      hash = (37 * hash) + DEVICE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
       hash = (37 * hash) + EVENT_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEventTime().hashCode();
       hash = (37 * hash) + TIMESTAMP_FIELD_NUMBER;
@@ -3992,6 +4069,8 @@ public final class UCLACellPhoneProtos {
       }
       public Builder clear() {
         super.clear();
+        deviceId_ = "";
+
         eventTime_ = "";
 
         timestamp_ = 0D;
@@ -4064,6 +4143,7 @@ public final class UCLACellPhoneProtos {
 
       public edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry buildPartial() {
         edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry result = new edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry(this);
+        result.deviceId_ = deviceId_;
         result.eventTime_ = eventTime_;
         result.timestamp_ = timestamp_;
         if (magneticFieldBuilder_ == null) {
@@ -4142,6 +4222,10 @@ public final class UCLACellPhoneProtos {
 
       public Builder mergeFrom(edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry other) {
         if (other == edu.ucla.cell_phone_telemetry.UCLACellPhoneProtos.CellPhoneTelemetry.getDefaultInstance()) return this;
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
+          onChanged();
+        }
         if (!other.getEventTime().isEmpty()) {
           eventTime_ = other.eventTime_;
           onChanged();
@@ -4205,6 +4289,95 @@ public final class UCLACellPhoneProtos {
             mergeFrom(parsedMessage);
           }
         }
+        return this;
+      }
+
+      private java.lang.Object deviceId_ = "";
+      /**
+       * <pre>
+       * A string identifier for the device
+       * </pre>
+       *
+       * <code>optional string device_id = 200;</code>
+       */
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A string identifier for the device
+       * </pre>
+       *
+       * <code>optional string device_id = 200;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * A string identifier for the device
+       * </pre>
+       *
+       * <code>optional string device_id = 200;</code>
+       */
+      public Builder setDeviceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A string identifier for the device
+       * </pre>
+       *
+       * <code>optional string device_id = 200;</code>
+       */
+      public Builder clearDeviceId() {
+        
+        deviceId_ = getDefaultInstance().getDeviceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * A string identifier for the device
+       * </pre>
+       *
+       * <code>optional string device_id = 200;</code>
+       */
+      public Builder setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceId_ = value;
+        onChanged();
         return this;
       }
 
@@ -5555,19 +5728,19 @@ public final class UCLACellPhoneProtos {
       " \001(\002\"8\n\nQuaternion\022\t\n\001x\030\001 \001(\002\022\t\n\001y\030\002 \001(\002" +
       "\022\t\n\001z\030\003 \001(\002\022\t\n\001w\030\004 \001(\002\"N\n\016LatLonAltitude" +
       "\022\020\n\010latitude\030\001 \001(\001\022\021\n\tlongitude\030\002 \001(\001\022\027\n" +
-      "\017altitude_meters\030\003 \001(\001\"\227\003\n\022CellPhoneTele" +
-      "metry\022\022\n\nevent_time\030\001 \001(\t\022\021\n\ttimestamp\030\002" +
-      " \001(\001\022 \n\016magnetic_field\030\n \001(\0132\010.Vector3\022\033",
-      "\n\tgyroscope\030\024 \001(\0132\010.Vector3\022%\n\023linear_ac" +
-      "celeration\030\036 \001(\0132\010.Vector3\022&\n\024angular_ac" +
-      "celeration\030( \001(\0132\010.Vector3\022\031\n\007gravity\0302 " +
-      "\001(\0132\010.Vector3\022$\n\013lat_lon_alt\030< \001(\0132\017.Lat" +
-      "LonAltitude\022\035\n\025ambient_temperature_c\030F \001" +
-      "(\002\022\020\n\010light_lx\030P \001(\002\022!\n\031ambient_air_pres" +
-      "sure_mbar\030Z \001(\002\022\031\n\021relative_humidity\030d \001" +
-      "(\002\022\034\n\024device_temperature_c\030n \001(\002B4\n\035edu." +
-      "ucla.cell_phone_telemetryB\023UCLACellPhone" +
-      "Protosb\006proto3"
+      "\017altitude_meters\030\003 \001(\001\"\253\003\n\022CellPhoneTele" +
+      "metry\022\022\n\tdevice_id\030\310\001 \001(\t\022\022\n\nevent_time\030" +
+      "\001 \001(\t\022\021\n\ttimestamp\030\002 \001(\001\022 \n\016magnetic_fie",
+      "ld\030\n \001(\0132\010.Vector3\022\033\n\tgyroscope\030\024 \001(\0132\010." +
+      "Vector3\022%\n\023linear_acceleration\030\036 \001(\0132\010.V" +
+      "ector3\022&\n\024angular_acceleration\030( \001(\0132\010.V" +
+      "ector3\022\031\n\007gravity\0302 \001(\0132\010.Vector3\022$\n\013lat" +
+      "_lon_alt\030< \001(\0132\017.LatLonAltitude\022\035\n\025ambie" +
+      "nt_temperature_c\030F \001(\002\022\020\n\010light_lx\030P \001(\002" +
+      "\022!\n\031ambient_air_pressure_mbar\030Z \001(\002\022\031\n\021r" +
+      "elative_humidity\030d \001(\002\022\034\n\024device_tempera" +
+      "ture_c\030n \001(\002B4\n\035edu.ucla.cell_phone_tele" +
+      "metryB\023UCLACellPhoneProtosb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -5616,7 +5789,7 @@ public final class UCLACellPhoneProtos {
     internal_static_CellPhoneTelemetry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_CellPhoneTelemetry_descriptor,
-        new java.lang.String[] { "EventTime", "Timestamp", "MagneticField", "Gyroscope", "LinearAcceleration", "AngularAcceleration", "Gravity", "LatLonAlt", "AmbientTemperatureC", "LightLx", "AmbientAirPressureMbar", "RelativeHumidity", "DeviceTemperatureC", });
+        new java.lang.String[] { "DeviceId", "EventTime", "Timestamp", "MagneticField", "Gyroscope", "LinearAcceleration", "AngularAcceleration", "Gravity", "LatLonAlt", "AmbientTemperatureC", "LightLx", "AmbientAirPressureMbar", "RelativeHumidity", "DeviceTemperatureC", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

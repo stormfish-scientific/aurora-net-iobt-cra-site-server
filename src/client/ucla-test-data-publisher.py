@@ -121,6 +121,8 @@ def main():
 
             telemetry.timestamp = time.time()
 
+            telemetry.device_id = 'android_271'
+
             telemetry.lat_lon_alt.latitude = latitude
             telemetry.lat_lon_alt.longitude = longitude
 

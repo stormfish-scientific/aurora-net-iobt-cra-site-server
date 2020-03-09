@@ -30,13 +30,18 @@ import ucla_cellphone_telemetry_pb2
 from pprint import pprint
 
 
-def decode_and_print_cell_phone_telemetry(cellphone_data):
+def decode_and_print_cell_phone_telemetry(topic, cellphone_data):
     decoded_data = ucla_cellphone_telemetry_pb2 \
                    .CellPhoneTelemetry()
 
     decoded_data.ParseFromString(cellphone_data)
 
     # pprint({'decoded_data': decoded_data})
+
+    print("")
+
+    print('---%s---' % topic.decode('utf-8'))
+    print('device_id             : ' + decoded_data.device_id)
 
     if decoded_data.event_time != '':
         print('event_time            : ' +
@@ -162,7 +167,7 @@ def main():
                     or
                     message[0] == b'stormfish:phone-telemetry'
             ):
-                decode_and_print_cell_phone_telemetry(message[1])
+                decode_and_print_cell_phone_telemetry(message[0], message[1])
             else:
                 print('Received: [%s] %s' % (message[0].decode('utf-8'),
                                              message[1].decode('utf-8')))

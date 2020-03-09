@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='ucla_cellphone_telemetry.proto',
   package='',
   syntax='proto3',
-  serialized_pb=_b('\n\x1eucla_cellphone_telemetry.proto\"\x1f\n\x07Vector2\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"*\n\x07Vector3\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"5\n\x07Vector4\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"8\n\nQuaternion\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"N\n\x0eLatLonAltitude\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x12\x17\n\x0f\x61ltitude_meters\x18\x03 \x01(\x01\"\x97\x03\n\x12\x43\x65llPhoneTelemetry\x12\x12\n\nevent_time\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x01\x12 \n\x0emagnetic_field\x18\n \x01(\x0b\x32\x08.Vector3\x12\x1b\n\tgyroscope\x18\x14 \x01(\x0b\x32\x08.Vector3\x12%\n\x13linear_acceleration\x18\x1e \x01(\x0b\x32\x08.Vector3\x12&\n\x14\x61ngular_acceleration\x18( \x01(\x0b\x32\x08.Vector3\x12\x19\n\x07gravity\x18\x32 \x01(\x0b\x32\x08.Vector3\x12$\n\x0blat_lon_alt\x18< \x01(\x0b\x32\x0f.LatLonAltitude\x12\x1d\n\x15\x61mbient_temperature_c\x18\x46 \x01(\x02\x12\x10\n\x08light_lx\x18P \x01(\x02\x12!\n\x19\x61mbient_air_pressure_mbar\x18Z \x01(\x02\x12\x19\n\x11relative_humidity\x18\x64 \x01(\x02\x12\x1c\n\x14\x64\x65vice_temperature_c\x18n \x01(\x02\x42\x34\n\x1d\x65\x64u.ucla.cell_phone_telemetryB\x13UCLACellPhoneProtosb\x06proto3')
+  serialized_pb=_b('\n\x1eucla_cellphone_telemetry.proto\"\x1f\n\x07Vector2\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\"*\n\x07Vector3\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\"5\n\x07Vector4\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"8\n\nQuaternion\x12\t\n\x01x\x18\x01 \x01(\x02\x12\t\n\x01y\x18\x02 \x01(\x02\x12\t\n\x01z\x18\x03 \x01(\x02\x12\t\n\x01w\x18\x04 \x01(\x02\"N\n\x0eLatLonAltitude\x12\x10\n\x08latitude\x18\x01 \x01(\x01\x12\x11\n\tlongitude\x18\x02 \x01(\x01\x12\x17\n\x0f\x61ltitude_meters\x18\x03 \x01(\x01\"\xab\x03\n\x12\x43\x65llPhoneTelemetry\x12\x12\n\tdevice_id\x18\xc8\x01 \x01(\t\x12\x12\n\nevent_time\x18\x01 \x01(\t\x12\x11\n\ttimestamp\x18\x02 \x01(\x01\x12 \n\x0emagnetic_field\x18\n \x01(\x0b\x32\x08.Vector3\x12\x1b\n\tgyroscope\x18\x14 \x01(\x0b\x32\x08.Vector3\x12%\n\x13linear_acceleration\x18\x1e \x01(\x0b\x32\x08.Vector3\x12&\n\x14\x61ngular_acceleration\x18( \x01(\x0b\x32\x08.Vector3\x12\x19\n\x07gravity\x18\x32 \x01(\x0b\x32\x08.Vector3\x12$\n\x0blat_lon_alt\x18< \x01(\x0b\x32\x0f.LatLonAltitude\x12\x1d\n\x15\x61mbient_temperature_c\x18\x46 \x01(\x02\x12\x10\n\x08light_lx\x18P \x01(\x02\x12!\n\x19\x61mbient_air_pressure_mbar\x18Z \x01(\x02\x12\x19\n\x11relative_humidity\x18\x64 \x01(\x02\x12\x1c\n\x14\x64\x65vice_temperature_c\x18n \x01(\x02\x42\x34\n\x1d\x65\x64u.ucla.cell_phone_telemetryB\x13UCLACellPhoneProtosb\x06proto3')
 )
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -266,91 +266,98 @@ _CELLPHONETELEMETRY = _descriptor.Descriptor(
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='event_time', full_name='CellPhoneTelemetry.event_time', index=0,
+      name='device_id', full_name='CellPhoneTelemetry.device_id', index=0,
+      number=200, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b("").decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      options=None),
+    _descriptor.FieldDescriptor(
+      name='event_time', full_name='CellPhoneTelemetry.event_time', index=1,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='timestamp', full_name='CellPhoneTelemetry.timestamp', index=1,
+      name='timestamp', full_name='CellPhoneTelemetry.timestamp', index=2,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='magnetic_field', full_name='CellPhoneTelemetry.magnetic_field', index=2,
+      name='magnetic_field', full_name='CellPhoneTelemetry.magnetic_field', index=3,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='gyroscope', full_name='CellPhoneTelemetry.gyroscope', index=3,
+      name='gyroscope', full_name='CellPhoneTelemetry.gyroscope', index=4,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='linear_acceleration', full_name='CellPhoneTelemetry.linear_acceleration', index=4,
+      name='linear_acceleration', full_name='CellPhoneTelemetry.linear_acceleration', index=5,
       number=30, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='angular_acceleration', full_name='CellPhoneTelemetry.angular_acceleration', index=5,
+      name='angular_acceleration', full_name='CellPhoneTelemetry.angular_acceleration', index=6,
       number=40, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='gravity', full_name='CellPhoneTelemetry.gravity', index=6,
+      name='gravity', full_name='CellPhoneTelemetry.gravity', index=7,
       number=50, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='lat_lon_alt', full_name='CellPhoneTelemetry.lat_lon_alt', index=7,
+      name='lat_lon_alt', full_name='CellPhoneTelemetry.lat_lon_alt', index=8,
       number=60, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ambient_temperature_c', full_name='CellPhoneTelemetry.ambient_temperature_c', index=8,
+      name='ambient_temperature_c', full_name='CellPhoneTelemetry.ambient_temperature_c', index=9,
       number=70, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='light_lx', full_name='CellPhoneTelemetry.light_lx', index=9,
+      name='light_lx', full_name='CellPhoneTelemetry.light_lx', index=10,
       number=80, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='ambient_air_pressure_mbar', full_name='CellPhoneTelemetry.ambient_air_pressure_mbar', index=10,
+      name='ambient_air_pressure_mbar', full_name='CellPhoneTelemetry.ambient_air_pressure_mbar', index=11,
       number=90, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='relative_humidity', full_name='CellPhoneTelemetry.relative_humidity', index=11,
+      name='relative_humidity', full_name='CellPhoneTelemetry.relative_humidity', index=12,
       number=100, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='device_temperature_c', full_name='CellPhoneTelemetry.device_temperature_c', index=12,
+      name='device_temperature_c', full_name='CellPhoneTelemetry.device_temperature_c', index=13,
       number=110, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
@@ -369,7 +376,7 @@ _CELLPHONETELEMETRY = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=305,
-  serialized_end=712,
+  serialized_end=732,
 )
 
 _CELLPHONETELEMETRY.fields_by_name['magnetic_field'].message_type = _VECTOR3
